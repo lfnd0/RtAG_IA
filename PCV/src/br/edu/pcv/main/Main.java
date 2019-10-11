@@ -49,7 +49,7 @@ public class Main {
 	}
 	
 	public void printSaida(int numeroDaGeracao) {
-		System.out.println("Geração #" +numeroDaGeracao);
+		System.out.println("Geracao #" + numeroDaGeracao);
 		String esquema1 = "Rota ";
 		String esquema2 = "Fitness | Distancia (Km)";
 		int nomesDasCidades = 0;
