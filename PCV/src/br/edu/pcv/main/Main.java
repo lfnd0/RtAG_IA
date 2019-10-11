@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 import br.edu.pcv.ag.AlgoritmoGenetico;
-import br.edu.pcv.amostra.Populacao;
+import br.edu.pcv.populacao.Populacao;
 import br.edu.pcv.rotas.Cidade;
 
 public class Main {
@@ -37,7 +37,7 @@ public class Main {
 			main.printPopulacao(populacao);
 		}
 		
-		System.out.println("A melhor rota encontrada foi: " + populacao.getRotas().get(0) + " com uma distância de " + String.format("%.2f", populacao.getRotas().get(0).calcularDistanciaTotal()) + " quilômetros.");
+		System.out.println("A melhor rota encontrada foi: " + populacao.getRotas().get(0) + " com uma distancia de " + String.format("%.2f", populacao.getRotas().get(0).calcularDistanciaTotal()) + " quilometros.");
 	}
 	
 	public void printPopulacao(Populacao populacao) {
@@ -51,7 +51,7 @@ public class Main {
 	public void printSaida(int numeroDaGeracao) {
 		System.out.println("Geração #" +numeroDaGeracao);
 		String esquema1 = "Rota ";
-		String esquema2 = "Fitness | Distância (Km)";
+		String esquema2 = "Fitness | Distancia (Km)";
 		int nomesDasCidades = 0;
 		for (int x = 0; x < rotaInicial.size(); x++) nomesDasCidades += rotaInicial.get(x).getNome().length();
 		int tamandoDoArray = nomesDasCidades + rotaInicial.size() * 2;

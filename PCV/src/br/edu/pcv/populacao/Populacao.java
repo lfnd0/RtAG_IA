@@ -1,4 +1,4 @@
-package br.edu.pcv.amostra;
+package br.edu.pcv.populacao;
 
 import java.util.ArrayList;
 import java.util.stream.IntStream;

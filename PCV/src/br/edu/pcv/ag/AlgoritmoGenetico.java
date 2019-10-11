@@ -3,7 +3,7 @@ package br.edu.pcv.ag;
 import java.util.ArrayList;
 import java.util.stream.IntStream;
 
-import br.edu.pcv.amostra.Populacao;
+import br.edu.pcv.populacao.Populacao;
 import br.edu.pcv.rotas.Cidade;
 import br.edu.pcv.rotas.Rota;
 
