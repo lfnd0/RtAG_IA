@@ -10,16 +10,18 @@ import br.edu.pcv.rotas.Cidade;
 public class Main {
 
 	public ArrayList<Cidade> rotaInicial = new ArrayList<Cidade>(Arrays.asList(
-			new Cidade("Arapiraca", 42.3601, -71.0589),
-			new Cidade("Campo Alegre", 30.2672, -97.7431),
-			new Cidade("Craibas", 39.7392, -104.9903),
-			new Cidade("Girau do Ponciano", 40.7128, -74.0059),
-			new Cidade("Igaci", 47.6062, -122.3321),
-			new Cidade("Junqueiro", 37.7749, -122.4194),
-			new Cidade("Lagoa da Canoa", 41.8781, -87.6298),
-			new Cidade("Limoeiro de Anadia", 29.7604, -95.3698),
-			new Cidade("Palmeira dos Indios", 32.7767, -96.7970),
-			new Cidade("Sao Sebastiao", 34.0522, -118.2437)));
+			new Cidade("Arapiraca", -9.75487, -36.6615),
+			new Cidade("Campo Alegre", -9.78451, -36.3525),
+			new Cidade("Craibas", -9.6178, -36.7697),
+			new Cidade("Girau do Ponciano", -9.88404, -36.8316),
+			new Cidade("Igaci", -9.53768, -36.6372),
+			new Cidade("Junqueiro", -9.90696, -36.4803),
+			new Cidade("Lagoa da Canoa", -9.83291, -36.7413),
+			new Cidade("Limoeiro de Anadia", -9.74098, -36.5121),
+			new Cidade("Maceio", -9.66599, -35.735),
+			new Cidade("Marechal Deodoro", -9.70971, -35.8967),
+			new Cidade("Palmeira dos Indios", -9.40568, -36.6328),
+			new Cidade("Sao Sebastiao", -9.93043, -36.559)));
 
 	public static void main(String[] args) {
 		Main main = new Main();
