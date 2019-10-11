@@ -10,16 +10,16 @@ import br.edu.pcv.rotas.Cidade;
 public class Main {
 
 	public ArrayList<Cidade> rotaInicial = new ArrayList<Cidade>(Arrays.asList(
-			new Cidade("Boston", 42.3601, -71.0589),
-			new Cidade("Houston", 29.7604, -95.3698),
-			new Cidade("Austin", 30.2672, -97.7431),
-			new Cidade("San Francisco", 37.7749, -122.4194),
-			new Cidade("Denver", 39.7392, -104.9903),
-			new Cidade("Los Angeles", 34.0522, -118.2437),
-			new Cidade("Chicago", 41.8781, -87.6298),
-			new Cidade("New York", 40.7128, -74.0059),
-			new Cidade("Dallas", 32.7767, -96.7970),
-			new Cidade("Seattle", 47.6062, -122.3321)));
+			new Cidade("Arapiraca", 42.3601, -71.0589),
+			new Cidade("Campo Alegre", 30.2672, -97.7431),
+			new Cidade("Craibas", 39.7392, -104.9903),
+			new Cidade("Girau do Ponciano", 40.7128, -74.0059),
+			new Cidade("Igaci", 47.6062, -122.3321),
+			new Cidade("Junqueiro", 37.7749, -122.4194),
+			new Cidade("Lagoa da Canoa", 41.8781, -87.6298),
+			new Cidade("Limoeiro de Anadia", 29.7604, -95.3698),
+			new Cidade("Palmeira dos Indios", 32.7767, -96.7970),
+			new Cidade("Sao Sebastiao", 34.0522, -118.2437)));
 
 	public static void main(String[] args) {
 		Main main = new Main();
