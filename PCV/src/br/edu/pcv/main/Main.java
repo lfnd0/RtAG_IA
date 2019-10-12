@@ -53,7 +53,7 @@ public class Main {
 	public void printSaida(int numeroDaGeracao) {
 		System.out.println("Geracao #" + numeroDaGeracao);
 		String esquema1 = "Rota ";
-		String esquema2 = "Fitness | Distancia (Km)";
+		String esquema2 = "Fitness  | Distancia (Km)";
 		int nomesDasCidades = 0;
 		for (int x = 0; x < rotaInicial.size(); x++) nomesDasCidades += rotaInicial.get(x).getNome().length();
 		int tamandoDoArray = nomesDasCidades + rotaInicial.size() * 2;
