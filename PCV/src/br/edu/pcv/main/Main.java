@@ -39,7 +39,7 @@ public class Main {
 			main.printPopulacao(populacao);
 		}
 		
-		System.out.println("A melhor rota encontrada foi: " + populacao.getRotas().get(0) + " com uma distancia de " + String.format("%.2f", populacao.getRotas().get(0).calcularDistanciaTotal()) + " quilometros.");
+		System.out.println("A rota com a menor distancia encontrada foi: " + populacao.getRotas().get(0) + " com " + String.format("%.2f", populacao.getRotas().get(0).calcularDistanciaTotal()) + " quilometros.");
 	}
 	
 	public void printPopulacao(Populacao populacao) {
