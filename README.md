@@ -1,4 +1,4 @@
-# Projeto problema do caixeiro viajante
+# Caixeiro viajante
 
   ## Informações sobre o projeto:
   * Disciplina: Inteligência Artificial
