@@ -3,5 +3,5 @@
   ## Informações sobre o projeto:
   * Disciplina: Inteligência Artificial
   * Aplicação do Algoritmo Genético
-  * Linguagem utilizada: Java 8
+  * Linguagem utilizada: Java
   * IDE: Eclipse
