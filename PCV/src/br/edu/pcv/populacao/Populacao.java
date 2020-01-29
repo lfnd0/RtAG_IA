@@ -8,6 +8,7 @@ import br.edu.pcv.rotas.Cidade;
 import br.edu.pcv.rotas.Rota;
 
 public class Populacao {
+	
 	private ArrayList<Rota> rotas = new ArrayList<Rota>(AlgoritmoGenetico.TAMANHO_DA_POPULACAO);
 
 	public Populacao(int tamanhoDaPopulacao, AlgoritmoGenetico algoritmoGenetico) {

@@ -1,71 +1,53 @@
 package br.edu.pcv.main;
 
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import br.edu.pcv.ag.AlgoritmoGenetico;
 import br.edu.pcv.populacao.Populacao;
 import br.edu.pcv.rotas.Cidade;
 
 public class Main {
+	
+	private static final String url = "jdbc:sqlite:pcv.db";
+	static ArrayList<Cidade> rotaInicial;
 
-	public ArrayList<Cidade> rotaInicial = new ArrayList<Cidade>(Arrays.asList(
-			new Cidade("Arapiraca", -9.75487, -36.6615),
-			new Cidade("Campo Alegre", -9.78451, -36.3525),
-			new Cidade("Craibas", -9.6178, -36.7697),
-			new Cidade("Girau do Ponciano", -9.88404, -36.8316),
-			new Cidade("Igaci", -9.53768, -36.6372),
-			new Cidade("Junqueiro", -9.90696, -36.4803),
-			new Cidade("Lagoa da Canoa", -9.83291, -36.7413),
-			new Cidade("Limoeiro de Anadia", -9.74098, -36.5121),
-			new Cidade("Maceio", -9.66599, -35.735),
-			new Cidade("Marechal Deodoro", -9.70971, -35.8967),
-			new Cidade("Palmeira dos Indios", -9.40568, -36.6328),
-			new Cidade("Sao Sebastiao", -9.93043, -36.559)));
+	public static void main(String[] args) throws SQLException {
+		rotaInicial = selecionarCidadeBD(/* args */);
 
-	public static void main(String[] args) {
-		Main main = new Main();
-		Populacao populacao = new Populacao(AlgoritmoGenetico.TAMANHO_DA_POPULACAO, main.rotaInicial);
+		Populacao populacao = new Populacao(AlgoritmoGenetico.TAMANHO_DA_POPULACAO, Main.rotaInicial);
 		populacao.sorteioDasRotasFuncaoFitness();
-		AlgoritmoGenetico algoritmoGenetico = new AlgoritmoGenetico(main.rotaInicial);
+		AlgoritmoGenetico algoritmoGenetico = new AlgoritmoGenetico(Main.rotaInicial);
 		int numeroDaGeracao = 0;
-		main.printSaida(numeroDaGeracao++);
-		main.printPopulacao(populacao);
 		
 		while (numeroDaGeracao < AlgoritmoGenetico.NUMERO_DE_GERACOES) {
-			main.printSaida(numeroDaGeracao++);
+			numeroDaGeracao++;
 			populacao = algoritmoGenetico.evoluiPopulacao(populacao);
 			populacao.sorteioDasRotasFuncaoFitness();
-			main.printPopulacao(populacao);
 		}
 		
 		System.out.println("A rota com a menor distancia encontrada foi: " + populacao.getRotas().get(0) + " com " + String.format("%.2f", populacao.getRotas().get(0).calcularDistanciaTotal()) + " quilometros.");
 	}
 	
-	public void printPopulacao(Populacao populacao) {
-		populacao.getRotas().forEach(x -> {
-			System.out.println(Arrays.toString(x.getCidades().toArray()) + " | " + String.format("%.4f", x.getFuncaoFitness())
-			+ "  |  " + String.format("%.2f", x.calcularDistanciaTotal()));
-		});
-		System.out.println("");
+	private static String sql = "where nome in ('Arapiraca', 'Craibas', 'Limoeiro de Anadia', 'Sao Sebastiao')";
+	
+	static ArrayList<Cidade> selecionarCidadeBD(/*String[] listaCidadesUsuario*/) throws SQLException {
+		ArrayList<Cidade> cidades = new ArrayList<Cidade>();
+		ResultSet resultSet = DriverManager.getConnection(getUrl()).createStatement().executeQuery("select * from cidades " + sql /*gerarCondicaoSql(listaCidadesUsuario)*/);
+		while (resultSet.next()) cidades.add(new Cidade(resultSet.getString("nome"), Double.valueOf((resultSet.getString("latitude"))), Double.valueOf((resultSet.getString("longitude")))));
+		return cidades;
 	}
 	
-	public void printSaida(int numeroDaGeracao) {
-		System.out.println("Geracao #" + numeroDaGeracao);
-		String esquema1 = "Rota ";
-		String esquema2 = "Fitness  | Distancia (Km)";
-		int nomesDasCidades = 0;
-		for (int x = 0; x < rotaInicial.size(); x++) nomesDasCidades += rotaInicial.get(x).getNome().length();
-		int tamandoDoArray = nomesDasCidades + rotaInicial.size() * 2;
-		int comprimentoParcial = (tamandoDoArray - esquema1.length()) / 2;
-		for (int x = 0; x < comprimentoParcial; x++) System.out.print(" ");
-		System.out.print(esquema1);
-		for (int x = 0; x < comprimentoParcial; x++) System.out.print(" ");
-		if ((tamandoDoArray % 2) == 0) System.out.print(" ");
-		System.out.println(" | " + esquema2);
-		nomesDasCidades += esquema2.length() + 3;
-		for (int x = 0; x < nomesDasCidades + rotaInicial.size() * 2; x++)
-			System.out.print("-");
-		System.out.println("");
+	/*
+	 * private static String gerarCondicaoSql(String[] listaCidadesUsuario) { String
+	 * out = "where nome in ("; boolean isFirst = true; for(String cidadeUsr :
+	 * listaCidadesUsuario) { if(!isFirst) out+= ", "; out+="'" + cidadeUsr + "'";
+	 * isFirst = false; } out +=")"; return out; }
+	 */
+
+	public static String getUrl() {
+		return url;
 	}
 }

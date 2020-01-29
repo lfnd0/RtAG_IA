@@ -8,6 +8,7 @@ import br.edu.pcv.rotas.Cidade;
 import br.edu.pcv.rotas.Rota;
 
 public class AlgoritmoGenetico {
+	
 	public static final double TAXA_DE_MUTACAO = 0.10;
 	public static final int TAMANHO_DA_SELECAO = 4;
 	public static final int TAMANHO_DA_POPULACAO = 10;

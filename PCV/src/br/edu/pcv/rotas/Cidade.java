@@ -4,7 +4,7 @@ public class Cidade {
 
 	private static final double RAIO_TERRESTRE = 6378.1370D;
 	private static final double CONVERSAO_GRAU_RADIANO = Math.PI / 180D;
-	
+
 	private String nome;
 	private double latitude;
 	private double longitude;
