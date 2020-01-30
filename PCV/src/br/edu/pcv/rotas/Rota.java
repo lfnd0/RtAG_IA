@@ -7,16 +7,16 @@ import java.util.Collections;
 import br.edu.pcv.ag.AlgoritmoGenetico;
 
 public class Rota {
-	
+
 	private boolean isFuncaoFitness = true;
 	private double funcaoFitness = 0;
-	
+
 	private ArrayList<Cidade> cidades = new ArrayList<Cidade>();
-	
+
 	public Rota(AlgoritmoGenetico algoritmoGenetico) {
 		algoritmoGenetico.getRotaInicial().forEach(x -> cidades.add(null));
 	}
-	
+
 	public Rota(ArrayList<Cidade> cidades) {
 		this.cidades.addAll(cidades);
 		Collections.shuffle(this.cidades);
@@ -45,7 +45,7 @@ public class Rota {
 			return valorDeRetorno;
 		}).sum() + this.cidades.get(0).medirDistancia(this.cidades.get(quantidadeDeCidades - 1)));
 	}
-	
+
 	@Override
 	public String toString() {
 		return Arrays.toString(cidades.toArray());

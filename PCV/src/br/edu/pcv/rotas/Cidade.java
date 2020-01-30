@@ -34,7 +34,7 @@ public class Cidade {
 				* Math.cos(cidade.getLatitude()) * Math.pow(Math.sin(longitudeAux / 2D), 2D);
 		return RAIO_TERRESTRE * 2D * Math.atan2(Math.sqrt(resultado), Math.sqrt(1D - resultado));
 	}
-	
+
 	public String toString() {
 		return getNome();
 	}
