@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+C:\Users\luizfernando\Documents\Projetos\RtAG_IA\.metadata\.plugins\org.eclipse.jdt.core
