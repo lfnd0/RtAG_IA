@@ -8,4 +8,5 @@
   ## Ferramentas utilizadas:
   * Java
   * SQLite
+  * JavaFX
   * Eclipse IDE
