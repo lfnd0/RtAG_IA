@@ -48,7 +48,7 @@ public class ViewController {
 			String solucao = "" + populacao.getRotas().get(0);
 			rota.setText(solucao);
 			distancia.setText(String.format("%.2f", populacao.getRotas().get(0).calcularDistanciaTotal()));
-			System.out.println("Rota: " + solucao + "\n Distancia: " + distancia);
+			System.out.println("Rota: " + solucao + "\nDistancia: " + distancia.getText());
 
 		} catch (Exception exception) {
 			System.out.println(exception);
