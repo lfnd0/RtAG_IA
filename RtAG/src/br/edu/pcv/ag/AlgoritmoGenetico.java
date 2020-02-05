@@ -34,8 +34,8 @@ public class AlgoritmoGenetico {
 		IntStream.range(0, NUMERO_DE_MELHOR_ROTA)
 				.forEach(x -> crossoverPopulacao.getRotas().set(x, populacao.getRotas().get(x)));
 		IntStream.range(NUMERO_DE_MELHOR_ROTA, crossoverPopulacao.getRotas().size()).forEach(x -> {
-			Rota rota1 = selecionarPopulacao(populacao).getRotas().get(0);
-			Rota rota2 = selecionarPopulacao(populacao).getRotas().get(0);
+			Rota rota1 = selecionarAmostra(populacao).getRotas().get(0);
+			Rota rota2 = selecionarAmostra(populacao).getRotas().get(0);
 			crossoverPopulacao.getRotas().set(x, crossoverRota(rota1, rota2));
 		});
 		return crossoverPopulacao;
@@ -82,11 +82,11 @@ public class AlgoritmoGenetico {
 		return rota;
 	}
 
-	Populacao selecionarPopulacao(Populacao populacao) {
-		Populacao selecaoDaPopulacao = new Populacao(TAMANHO_DA_SELECAO, this);
-		IntStream.range(0, TAMANHO_DA_SELECAO).forEach(x -> selecaoDaPopulacao.getRotas().set(x,
+	Populacao selecionarAmostra(Populacao populacao) {
+		Populacao selecaoAmostraPopulacao = new Populacao(TAMANHO_DA_SELECAO, this);
+		IntStream.range(0, TAMANHO_DA_SELECAO).forEach(x -> selecaoAmostraPopulacao.getRotas().set(x,
 				populacao.getRotas().get((int) (Math.random() * populacao.getRotas().size()))));
-		selecaoDaPopulacao.sorteioDasRotasFuncaoFitness();
-		return selecaoDaPopulacao;
+		selecaoAmostraPopulacao.sorteioDasRotasFuncaoFitness();
+		return selecaoAmostraPopulacao;
 	}
 }
