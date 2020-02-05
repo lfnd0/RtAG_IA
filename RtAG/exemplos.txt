@@ -1,0 +1,5 @@
+'Arapiraca', 'Maceio', 'Coruripe', 'Penedo', 'Sao Miguel dos Campos', 'Jequia da Praia', 'Santana do Ipanema', 'Uniao dos Palmares', 'Murici', 'Marechal Deodoro'
+
+'Craibas', 'Lagoa da Canoa', 'Anadia', 'Porto Real do Colegio', 'Taquarana', 'Maribondo', 'Barra de Sao Miguel', 'Jaramataia', 'Jacare dos Homens', 'Vicosa'
+
+'Arapiraca', 'Limoeiro de Anadia', 'Palmeira dos Indios', 'Craibas', 'Sao Sebastiao', 'Lagoa da Canoa', 'Taquarana', 'Junqueiro', 'Anadia', 'Campo Alegre'
